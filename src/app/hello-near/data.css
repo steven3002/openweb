@@ -1,0 +1,56 @@
+.app {
+  
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--very-dark-blue-main);
+}
+:root {
+
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+  
+    --very-dark-blue-main: hsl(217, 54%, 11%);
+    --very-dark-blue-card: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+.inlineList {
+    display: flex;
+    justify-content: space - between;
+    flex-direction: row;
+}
+.Card {
+    
+display: flex;
+justify-content: center;
+flex-direction: column;
+width: 30%;
+margin: 20px 0px;
+gap: 20px;
+padding: 18px;
+border-radius: 20px;
+background-color: var(--very-dark-blue-card);
+cursor: pointer;
+}
+.CardImgContainer {
+    
+
+background-repeat: no-repeat;
+background-position: center;
+}
+.CardImg {
+    
+width: 100%;
+border-radius: 10px;
+
+opacity: 1;
+transition: opacity 0.25s ease-in-out;
+-moz-transition: opacity 0.25s ease-in-out;
+-webkit-transition: opacity 0.25s ease-in-out;
+}
