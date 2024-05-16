@@ -1,5 +1,5 @@
 const contractPerNetwork = {
-  testnet: 'knowledgeable-cap.testnet',
+  testnet: 'spiffy-chairs.testnet',
 };
 
 export const NetworkId = 'testnet';
