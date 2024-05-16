@@ -1,8 +1,8 @@
-import styles from '@/styles/app.module.css';
+
 import { useState, useEffect } from 'react';
 import { useStore } from '@/layout';
 import { HelloNearContract } from '../config';
-import { EventsContainer } from '@/event/eventList'
+
 import { VoteComponent } from '@/event/vote'
 
 
@@ -45,27 +45,16 @@ export default function Home() {
 
 
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Interacting with the contract: &nbsp;
-          <code className={styles.code}>{CONTRACT}</code>
-        </p>
+    <>
+      <div className="w-100 text-end align-text-center" hidden={loggedIn}>
+        <p> Please login to vote</p>
+
       </div>
-
-      <div className={styles.center}>
-        <div className="input-group main1134" hidden={!loggedIn}>
-
-          <EventsContainer data1={greeting} />
-
-          <VoteComponent data={greeting} onVoteButtonClick={handleVoteButtonClick} />
+      <div className='subbody' hidden={!loggedIn}>
+        <VoteComponent data={greeting} onVoteButtonClick={handleVoteButtonClick} />
 
 
-        </div>
-        <div className="w-100 text-end align-text-center" hidden={loggedIn}>
-          <p className="m-0"> Please login to vote</p>
-        </div>
       </div>
-    </main >
+    </>
   );
 }
