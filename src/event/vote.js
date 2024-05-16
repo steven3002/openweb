@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-
 export const VoteComponent = ({ data, onVoteButtonClick }) => {
     const [showCards, setShowCards] = useState(false);
     const [voteCount1, setVoteCount1] = useState(0);
@@ -37,40 +36,40 @@ export const VoteComponent = ({ data, onVoteButtonClick }) => {
     };
     const array = ["https://wc6twypwa5fhvlv5ytxjrk5wtjnriurwyiigkeay6mcx3vzvwr6a.arweave.net/sL07YfYHSnquvcTumKu2mlsUUjbCEGUQGPMFfdc1tHw", "https://bafkreif7g76jre76i5mnjc2y63pidnfhfabdnik3naq2udvxjf2hhr3bui.ipfs.nftstorage.link/", "https://zlyd4yjgrmfjnumk6cwncdx3hywxixqdxqyjslno4x5sam4c7bia.arweave.net/yvA-YSaLCpbRivCs0Q77Pi10XgO8MJktruX7IDOC-FA"]
 
-    return (
-        <div className="container events-container">
-            {!showCards && (
-                <div className="game15"><button className='button-89 vote-button' onClick={handleButtonClick}><h3>Start Voting</h3></button>
-                </div>)}
-            {showCards && (
+    return (<>
+        {!showCards && (<><div className='header11'><h1>Vote for the Best ......</h1></div>
+            <div className="game15"><button className='button-53 vote-button' onClick={handleButtonClick}><h3>Start Voting</h3></button>
+            </div></>)}
+        {showCards && (
+            <div class="container001 horizontal">
+                {Object.keys(data).map(key => (
 
-                <div className="fit1134">
+                    <article class="card001">
+                        <img class="card__background" src={data[key].image_url}
 
-                    <div className="event"><div className="event-containerx data11win">
-                        {Object.keys(data).map(key => (
+                            alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920"
+                            height="2193" />
+                        <div class="card__content | flow">
+                            <div class="card__content--container | flow">
 
-                            <div className="container112 event-detailsx event-detailse datafit11" >
-                                <div className="wrapper112">
-                                    <div className="banner-image" style={{
-                                        backgroundImage: `url(${array[key]})`
-                                    }}> </div>
-                                    <h1>{data[key].title}</h1>
-                                    <p>{data[key].description}</p>
-                                    <h3>{data[key].total_votes}</h3>
-                                </div>
-                                <div className="button-wrapper">
-                                    <button className="btn fill" onClick={() => handleVoteClick(data[key].id)} role="button" >Vote</button>
-                                </div>
+                                <h2 class="card__title">{data[key].title}  </h2>
+
+                                <p class="card__description">
+                                    {data[key].description}
+                                </p>
                             </div>
+                            <button class="card__button" onClick={() => handleVoteClick(data[key].id)} role="button" >vote</button>
+                            <div className='ote-button-container'> </div>
+                        </div>
+                    </article>
 
-                        ))}</div>
-                    </div>
+
+                ))}
 
 
-                </div>
-            )}
-            {showCards && <div>Time Left: {timer} seconds</div>}
-        </div>
+            </div>
+        )}
+    </>
     );
 };
 ;
